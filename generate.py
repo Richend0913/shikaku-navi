@@ -14,6 +14,7 @@ CERTS_DIR.mkdir(exist_ok=True)
 ADSENSE_PUB = "ca-pub-6327505164684489"
 AMAZON_TAG = "okuritegift-22"
 RAKUTEN_ID = "522e40a0.f2dc4208.522e40a1.385f875e"
+A8NET_TENSHOKU_URL = ""  # A8net登録後にURLを設定
 SITE_NAME = "資格ナビ"
 SITE_URL = "https://richend0913.github.io/shikaku-navi"
 
@@ -1019,10 +1020,13 @@ def generate_cert_page(cert):
   </section>
 </div>
 
-<div style="background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;border-radius:12px;padding:20px;text-align:center;margin:24px 0;">
-  <div style="font-size:.85rem;color:#1e40af;font-weight:600;margin-bottom:8px;">転職活動中の方へ</div>
-  <div style="font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:12px;">履歴書・職務経歴書をサクッと作成</div>
-  <a href="https://richend0913.github.io/rirekisho-maker/" style="display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;">履歴書メーカーを使う</a>
+<div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:24px;margin:24px 0;">
+  <h3 style="text-align:center;font-size:1.2rem;color:#1e293b;margin-bottom:16px;">関連サイト</h3>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+    <a href="../salary-navi/" style="flex:1;min-width:160px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:14px;border-radius:8px;text-align:center;text-decoration:none;font-weight:600;font-size:.9rem;">💰 年収ナビ</a>
+    <a href="../fukugyo-navi/" style="flex:1;min-width:160px;background:linear-gradient(135deg,#f093fb,#f5576c);color:#fff;padding:14px;border-radius:8px;text-align:center;text-decoration:none;font-weight:600;font-size:.9rem;">💻 副業ナビ</a>
+    <a href="https://richend0913.github.io/rirekisho-maker/" style="flex:1;min-width:160px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:14px;border-radius:8px;text-align:center;text-decoration:none;font-weight:600;font-size:.9rem;">📄 履歴書メーカー</a>
+  </div>
 </div>
 
 {FOOTER_HTML}
@@ -1135,15 +1139,31 @@ def generate_index():
   {AD_SLOT_BOTTOM}
 </div>
 
-<div style="background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;border-radius:12px;padding:20px;text-align:center;margin:24px 0;">
-  <div style="font-size:.85rem;color:#1e40af;font-weight:600;margin-bottom:8px;">転職活動中の方へ</div>
-  <div style="font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:12px;">履歴書・職務経歴書をサクッと作成</div>
-  <a href="https://richend0913.github.io/rirekisho-maker/" style="display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;">履歴書メーカーを使う</a>
-</div>
+<section style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:32px;margin:24px auto;max-width:900px;">
+  <h2 style="text-align:center;font-size:1.3rem;color:#1e293b;margin-bottom:20px;">関連サイト</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+    <a href="../salary-navi/" style="flex:1;min-width:180px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:16px;border-radius:10px;text-align:center;text-decoration:none;font-weight:bold;">
+      <div style="font-size:1.3rem;margin-bottom:4px;">💰</div>
+      <div>年収ナビ</div>
+      <div style="font-size:.75rem;opacity:.85;">職業別の年収データ</div>
+    </a>
+    <a href="../fukugyo-navi/" style="flex:1;min-width:180px;background:linear-gradient(135deg,#f093fb,#f5576c);color:#fff;padding:16px;border-radius:10px;text-align:center;text-decoration:none;font-weight:bold;">
+      <div style="font-size:1.3rem;margin-bottom:4px;">💻</div>
+      <div>副業ナビ</div>
+      <div style="font-size:.75rem;opacity:.85;">おすすめ副業35選</div>
+    </a>
+    <a href="https://richend0913.github.io/rirekisho-maker/" style="flex:1;min-width:180px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:16px;border-radius:10px;text-align:center;text-decoration:none;font-weight:bold;">
+      <div style="font-size:1.3rem;margin-bottom:4px;">📄</div>
+      <div>履歴書メーカー</div>
+      <div style="font-size:.75rem;opacity:.85;">無料で履歴書作成</div>
+    </a>
+  </div>
+</section>
 
 <footer class="site-footer">
   <p>&copy; 2026 {SITE_NAME} All Rights Reserved.</p>
   <p><a href="index.html">ホーム</a> | <a href="#categories">カテゴリ別</a> | <a href="#all-certs">資格一覧</a></p>
+  <p style="margin-top:8px"><a href="../salary-navi/">年収ナビ</a> | <a href="../fukugyo-navi/">副業ナビ</a> | <a href="../rirekisho-maker/">履歴書メーカー</a></p>
 </footer>
 </body>
 </html>"""
