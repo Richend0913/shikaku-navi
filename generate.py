@@ -14,7 +14,7 @@ CERTS_DIR.mkdir(exist_ok=True)
 ADSENSE_PUB = "ca-pub-6327505164684489"
 AMAZON_TAG = "okuritegift-22"
 RAKUTEN_ID = "522e40a0.f2dc4208.522e40a1.385f875e"
-A8NET_TENSHOKU_URL = ""  # A8net登録後にURLを設定
+A8NET_TENSHOKU_URL = ""  # 転職AGENT NaviのアフィリエイトURLを設定（幅広い職種カバー）
 SITE_NAME = "資格ナビ"
 SITE_URL = "https://richend0913.github.io/shikaku-navi"
 
