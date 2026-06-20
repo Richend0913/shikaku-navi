@@ -863,22 +863,40 @@ FOOTER_HTML = f"""<footer class="site-footer">
   <p><a href="../index.html">ホーム</a> | <a href="../index.html#categories">カテゴリ別</a> | <a href="../index.html#all-certs">資格一覧</a></p>
 </footer>"""
 
-ADSENSE_SCRIPT = f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_PUB}" crossorigin="anonymous"></script>'
+# AdSenseは審査2回不通過のため無効化(死にコード除去)。収益はA8.net承認済み転職アフィに統一。
+ADSENSE_SCRIPT = ""
 
-AD_SLOT_TOP = f"""<div class="ad-space">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="{ADSENSE_PUB}" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
-</div>"""
+# A8.net 承認済み転職プログラム(年収ナビと同一素材 a8mat ...5ZEMP)。資格取得→キャリアアップ/転職は高相性。
+A8_AFF_URL = "https://px.a8.net/svt/ejp?a8mat=4B1D5G+9K4NIQ+5BJK+5ZEMP"
+A8_PIXEL = '<img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B1D5G+9K4NIQ+5BJK+5ZEMP" alt="">'
 
-AD_SLOT_MID = f"""<div class="ad-space">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="{ADSENSE_PUB}" data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
-</div>"""
 
-AD_SLOT_BOTTOM = f"""<div class="ad-space">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="{ADSENSE_PUB}" data-ad-slot="1122334455" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
-</div>"""
+def _aff_cta(title, sub, btn):
+    return (
+        '<div class="aff-cta" style="margin:22px 0;padding:18px;'
+        'background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:12px;text-align:center;color:#fff">'
+        f'<div style="font-size:17px;font-weight:bold;margin-bottom:6px">{title}</div>'
+        f'<div style="font-size:13px;margin-bottom:12px;opacity:.95">{sub}</div>'
+        f'<a href="{A8_AFF_URL}" rel="nofollow sponsored" target="_blank" '
+        'style="display:inline-block;background:#fff;color:#1e3a8a;padding:11px 26px;'
+        f'border-radius:8px;font-weight:bold;text-decoration:none">{btn} &rarr;</a></div>'
+    )
+
+
+AD_SLOT_TOP = _aff_cta(
+    "&#127891; その資格、転職で活かせていますか？",
+    "資格・スキルを正しく評価してくれる職場は必ずあります。まずは無料であなたの市場価値をチェック。",
+    "無料で適正年収・転職相談する")
+
+AD_SLOT_MID = _aff_cta(
+    "&#128176; 同じ資格でも、年収は会社で大きく変わります",
+    "資格手当や評価制度は企業によってさまざま。転職で年収100万円アップも珍しくありません。",
+    "無料で年収診断・求人を見る")
+
+AD_SLOT_BOTTOM = _aff_cta(
+    "&#128640; 資格を取ったら、次はキャリアアップ",
+    "せっかくの資格、今の職場で眠っていませんか？資格を活かせる求人を無料でチェック。",
+    "無料で転職相談する") + "\n" + A8_PIXEL
 
 
 def generate_cert_page(cert):
